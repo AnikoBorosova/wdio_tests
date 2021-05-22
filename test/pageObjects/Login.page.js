@@ -10,7 +10,8 @@ class LoginPage extends Page {
 	get shoppingCartLink() { return this.getAnchorElem("shopping_cart_link"); }
 
 	doLogin(username, password) {
-		this.userNameInput.waitForDisplayed(longPause);
+		this.userNameInput.waitForEnabled(longPause);
+		//this.setInputValue(this, this.userNameInput, username);
 		this.userNameInput.setValue(username);
 		this.passowrdInput.setValue(password);
 		this.loginBtn.click();

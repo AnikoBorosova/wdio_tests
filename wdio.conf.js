@@ -63,21 +63,36 @@ exports.config = {
 		'goog:chromeOptions': {
 			args: ['--headless']
 		},
-		acceptInsecureCerts: true
+		//acceptInsecureCerts: true
 		// If outputDir is provided WebdriverIO can capture driver session logs
 		// it is possible to configure which logTypes to include/exclude.
 		// excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
 		// excludeDriverLogs: ['bugreport', 'server'],
-	}
-		/*,
-		{
-			maxInstances: 5,
-			browserName: 'firefox',
-			"moz:firefoxOptions": {
-				//flag to activate Firefox headless mode (see https://github.com/mozilla/geckodriver/blob/master/README.md#firefox-capabilities for more details about moz:firefoxOptions)
-				//args: ['-headless']
-			}
+	},
+	{
+		maxInstances: 5,
+		browserName: 'firefox',
+		"moz:firefoxOptions": {
+			binary: '',
+			//flag to activate Firefox headless mode (see https://github.com/mozilla/geckodriver/blob/master/README.md#firefox-capabilities for more details about moz:firefoxOptions)
+			//args: ['-headless']
 		}
+	}
+
+		//path: "/wd/hub/",
+		//automationProtocol: "webdriver",
+		/*
+		options = {
+					automationProtocol: 'webdriver',
+					capabilities: {
+						browserName: "firefox",
+						"moz:firefoxOptions": {
+							args: ["-headless"],
+						}
+					}
+				};
+		
+			}
 		*/
 	],
 	//
