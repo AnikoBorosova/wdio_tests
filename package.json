@@ -1,0 +1,25 @@
+{
+  "name": "wdio_tests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnikoBorosova/wdio_tests.git"
+  },
+  "author": "Anikó Borosová",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnikoBorosova/wdio_tests/issues"
+  },
+  "homepage": "https://github.com/AnikoBorosova/wdio_tests#readme",
+  "dependencies": {
+    "webdriverio": "^7.6.0"
+  },
+  "devDependencies": {
+    "wdio": "^4.0.0"
+  }
+}
