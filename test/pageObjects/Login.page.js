@@ -9,11 +9,12 @@ class LoginPage extends Page {
 	get loginBtn() { return this.getBtn("login-button"); }
 	get shoppingCartLink() { return this.getAnchorElem("shopping_cart_link"); }
 
-	async doLogin(username, password) {
-		await (await this.userNameInput).setValue(username);
-		await (await this.passowrdInput).setValue(password);
-		await (await this.loginBtn).click();
-		await (await this.shoppingCartLink.waitForDisplayed(longPause));
+	doLogin(username, password) {
+		this.userNameInput.waitForDisplayed(longPause);
+		this.userNameInput.setValue(username);
+		this.passowrdInput.setValue(password);
+		this.loginBtn.click();
+		this.shoppingCartLink.waitForExist(longPause);
 	}
 }
 
