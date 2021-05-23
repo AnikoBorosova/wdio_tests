@@ -7,9 +7,9 @@ const userData = require("../../testData/userData");
 const password = userData.loginData.password;
 const lockedOutUser = userData.loginData.lockedOutUser;
 
-describe("Tests for login process", () => {
+describe("Tests for unsuccessful login process with locked out user credentials", () => {
 
-	it("should login with valid credentials", () => {
+	it("tries to login with locked out user", () => {
 		loginPage.open(mainUrl);
 
 		loginPage.doLogin(lockedOutUser, password);

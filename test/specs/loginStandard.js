@@ -13,6 +13,6 @@ describe("Tests for successful login process with valid user credentials", () =>
 		loginPage.open(mainUrl);
 
 		loginPage.doLogin(standardUser, password);
-		expect(loginPage.validateCartElemIsDisplayed());
+		expect(loginPage.validateCartElemIsDisplayed()).toBe(true);
 	});
 });

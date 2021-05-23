@@ -1,6 +1,6 @@
 const Page = require("./Page");
 const config = require("../../config");
-const longPause = config.pauses.long;
+const microPause = config.pauses.long;
 const inventoryPageUrl = config.urls.inventory;
 
 class LoginPage extends Page {
@@ -13,7 +13,7 @@ class LoginPage extends Page {
 
 
 	doLogin(userName, password) {
-		this.userNameInput.waitForExist(longPause);
+		this.userNameInput.waitForExist(microPause);
 		this.userNameInput.click();		// workaround for a bug experienced on Firefox Nightly
 		this.userNameInput.setValue(userName);
 		this.passowrdInput.setValue(password);
@@ -23,7 +23,7 @@ class LoginPage extends Page {
 	validateCartElemIsDisplayed() {
 		try {
 			browser.waitUntil(() => browser.getUrl() === inventoryPageUrl, {
-				timeout: longPause,
+				timeout: microPause,
 				timeoutMsg: "expect user to be logged in"
 			});
 			return this.shoppingCartLink.isExisting();
