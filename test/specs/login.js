@@ -16,6 +16,6 @@ describe("Tests for login process", () => {
 		LoginPage.open(mainUrl);
 
 		LoginPage.doLogin(standardUser, password);
-		expect(LoginPage.shoppingCartLink.isDisplayed());
+		expect(LoginPage.validateCartElemIsDisplayed());
 	});
 });

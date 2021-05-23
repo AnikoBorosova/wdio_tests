@@ -1,6 +1,7 @@
 const Page = require("./Page");
 const config = require("../../config");
 const longPause = config.pauses.long;
+const inventoryPageUrl = config.urls.inventory;
 
 class LoginPage extends Page {
 
@@ -15,7 +16,20 @@ class LoginPage extends Page {
 		this.userNameInput.setValue(username);
 		this.passowrdInput.setValue(password);
 		this.loginBtn.click();
-		this.shoppingCartLink.waitForExist(longPause);
+
+		browser.waitUntil(() => browser.getUrl() === inventoryPageUrl, {
+			timeout: longPause,
+			timeoutMsg: "expect user to be logged in"
+		});
+	}
+
+	validateCartElemIsDisplayed() {
+		try {
+			return this.shoppingCartLink.isExisting();
+		} catch (error) {
+			console.log("From validateCartElemIsDisplayed() ", error);
+			return false;
+		}
 	}
 }
 
