@@ -14,10 +14,6 @@ module.exports = class Page {
 		return this.$(`//input[@id='${id}']`);
 	}
 
-	getBtn(id) {
-		return this.$(`//input[@id='${id}']`);
-	}
-
 	getAnchorElem(elemClass) {
 		return this.$(`//a[@class='${elemClass}']`);
 	}

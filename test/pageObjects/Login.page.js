@@ -1,4 +1,5 @@
-const Page = require("./Page");
+const Page = require("./Page.page");
+const inventoryPage = require("./Inventory.page");
 const config = require("../../config");
 const microPause = config.pauses.long;
 const inventoryPageUrl = config.urls.inventory;
@@ -7,10 +8,8 @@ class LoginPage extends Page {
 
 	get userNameInput() { return this.getInput("user-name"); }
 	get passowrdInput() { return this.getInput("password"); }
-	get loginBtn() { return this.getBtn("login-button"); }
+	get loginBtn() { return this.getInput("login-button"); }
 	get errorMessageElem() { return $("//h3[@data-test='error']"); }
-	get shoppingCartLink() { return this.getAnchorElem("shopping_cart_link"); }
-
 
 	doLogin(userName, password) {
 		this.userNameInput.waitForExist(microPause);
@@ -26,7 +25,7 @@ class LoginPage extends Page {
 				timeout: microPause,
 				timeoutMsg: "expect user to be logged in"
 			});
-			return this.shoppingCartLink.isExisting();
+			return inventoryPage.shoppingCartLink.isExisting();
 		} catch (error) {
 			console.log("From validateCartElemIsDisplayed() ", error);
 			return false;
