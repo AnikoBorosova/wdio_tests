@@ -1,9 +1,7 @@
-## Web tests created and executed by using webdriverio, Mocha and dot-reporter
+## Web tests created and executed by using WebdriverIO, Mocha and dot-reporter
 Website being tested: https://www.saucedemo.com/
 
 ---------------------
-
-## How to run the tests locally
 
 ### System Requirements:
 
@@ -13,7 +11,9 @@ OS used: Linux/Ubuntu
 
 NodeJS version: ```12.16.1``` or above
 
-### Web tests
+
+### How to run the tests locally
+
 Location of the web tests: ```./wdioTests/specs/```
 
 - clone the repository
@@ -22,7 +22,8 @@ Location of the web tests: ```./wdioTests/specs/```
 - start the tests with the command: ```npm run testLocal```
 
 
-## Test scenarios 
+
+### Test scenarios 
 
 Find the scenarios in ```./wdioTests/specs/```
 
