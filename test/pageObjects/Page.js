@@ -21,11 +21,4 @@ module.exports = class Page {
 	getAnchorElem(elemClass) {
 		return this.$(`//a[@class='${elemClass}']`);
 	}
-
-	setInputValue(inputElement, value) {
-		const inputLength = inputElement.getValue().length;
-		const backspacesForClearingInput = new Array(inputLength).fill("Backspace");
-		inputElement.setValue(backspacesForClearingInput);
-		inputElement.setValue(value);
-	}
 }

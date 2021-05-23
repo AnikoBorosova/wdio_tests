@@ -10,8 +10,8 @@ class LoginPage extends Page {
 	get shoppingCartLink() { return this.getAnchorElem("shopping_cart_link"); }
 
 	doLogin(username, password) {
-		this.userNameInput.waitForEnabled(longPause);
-		//this.setInputValue(this, this.userNameInput, username);
+		this.userNameInput.waitForExist(longPause);
+		this.userNameInput.click();		// workaround for a bug experienced on Firefox Nightly
 		this.userNameInput.setValue(username);
 		this.passowrdInput.setValue(password);
 		this.loginBtn.click();
