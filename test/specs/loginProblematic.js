@@ -7,12 +7,13 @@ const mainUrl = config.urls.main;
 const userData = require("../../testData/userData");
 const password = userData.loginData.password;
 const problemUser = userData.loginData.problemUser;
+const incorrectImgSrc = userData.itemImgs.incorrectImgSrc;
 
 describe("Tests for problematic user", () => {
 
 	it("checks that items' images are not correct and all the same", () => {
 		loginPage.open(mainUrl);
 		loginPage.doLogin(problemUser, password);
-		expect(inventoryPage.validateItemImagesAreIncorrect());
+		expect(inventoryPage.validateItemImageSrc(incorrectImgSrc));
 	});
 });

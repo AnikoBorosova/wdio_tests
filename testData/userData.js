@@ -9,5 +9,8 @@ module.exports = {
     purchaseData: {
         itemName: "Sauce Labs Backpack",
         price: 29.99
+    },
+    itemImgs: {
+        imgSrcIncorrect: "/static/media/sl-404.168b1cce.jpg"
     }
 };

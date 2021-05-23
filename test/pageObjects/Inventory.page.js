@@ -1,6 +1,4 @@
 const Page = require("./Page.page");
-const config = require("../../config");
-const incorrectImgSrc = config.imgSrcIncorrect;
 
 class inventoryPage extends Page {
 
@@ -12,12 +10,12 @@ class inventoryPage extends Page {
 		return srcList;
 	}
 
-	validateItemImagesAreIncorrect() {
+	validateItemImageSrc(imgSrc) {
 		try {
-			const allSrcMatching = this.imageSrcArray.every((src) => src.includes(incorrectImgSrc));
+			const allSrcMatching = this.imageSrcArray.every((src) => src.includes(imgSrc));
 			return allSrcMatching;
 		} catch (error) {
-			console.log("From validateItemImagesAreIncorrect() ", error);
+			console.log("From validateItemImageSrc() ", error);
 			return false;
 		}
 	}
