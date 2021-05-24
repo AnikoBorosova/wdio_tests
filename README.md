@@ -22,7 +22,6 @@ Location of the web tests: ```./wdioTests/specs/```
 - start the tests with the command: ```npm run testLocal```
 
 
-
 ### Test scenarios 
 
 Find the scenarios in ```./wdioTests/specs/```
