@@ -1,4 +1,4 @@
-## Web tests created and executed by using WebdriverIO, Mocha and dot-reporter
+## Web tests created and executed by using WebdriverIO (wdio-chromedriver-service, @wdio/firefox-profile-service), Mocha and dot-reporter
 Website being tested: https://www.saucedemo.com/
 
 ---------------------
@@ -38,3 +38,7 @@ Find the scenarios in ```./wdioTests/specs/```
 3. Login process - negative scenario
 - Navigate to main page
 - Log in with valid user credentials and validate that the inventory items have incorrect images
+
+### Next steps
+
+To be expanded with appium
