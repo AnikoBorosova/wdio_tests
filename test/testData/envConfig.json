@@ -1,0 +1,11 @@
+{
+	"urls": {
+		"main": "https://www.saucedemo.com/",
+		"inventory": "https://www.saucedemo.com/inventory.html"
+	},
+	"pauses": {
+		"micro": 100,
+		"short": 3000,
+		"long": 10000
+	}
+}

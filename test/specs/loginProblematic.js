@@ -1,10 +1,10 @@
 const loginPage = require("../pageObjects/Login.page");
 const inventoryPage = require("../pageObjects/Inventory.page");
 
-const config = require("../../config");
-const mainUrl = config.urls.main;
+const envConfig = require("../../configs/envConfig");
+const mainUrl = envConfig.urls.main;
 
-const userData = require("../../testData/userData");
+const userData = require("../../configs/testData");
 const password = userData.loginData.password;
 const problemUser = userData.loginData.problemUser;
 const incorrectImgSrc = userData.itemImgs.imgSrcIncorrect;

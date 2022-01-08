@@ -1,8 +1,9 @@
 const Page = require("./Page.page");
 const inventoryPage = require("./Inventory.page");
-const config = require("../../config");
-const microPause = config.pauses.long;
-const inventoryPageUrl = config.urls.inventory;
+
+const envConfig = require("../../configs/envConfig");
+const shortPause = envConfig.pauses.short;
+const inventoryPageUrl = envConfig.urls.inventory;
 
 class LoginPage extends Page {
 
@@ -12,8 +13,8 @@ class LoginPage extends Page {
 	get errorMessageElem() { return $("//h3[@data-test='error']"); }
 
 	doLogin(userName, password) {
-		this.userNameInput.waitForExist(microPause);
-		this.userNameInput.click();		// workaround for a bug experienced on Firefox Nightly
+		this.userNameInput.waitForExist(shortPause);
+		//this.userNameInput.click();		// workaround for a bug experienced on Firefox Nightly
 		this.userNameInput.setValue(userName);
 		this.passowrdInput.setValue(password);
 		this.loginBtn.click();
@@ -22,7 +23,7 @@ class LoginPage extends Page {
 	validateCartElemIsDisplayed() {
 		try {
 			browser.waitUntil(() => browser.getUrl() === inventoryPageUrl, {
-				timeout: microPause,
+				timeout: shortPause,
 				timeoutMsg: "expect user to be logged in"
 			});
 			return inventoryPage.shoppingCartLink.isExisting();
@@ -32,9 +33,9 @@ class LoginPage extends Page {
 		}
 	}
 
-	validateLoginIsUnsuccessful() {
+	validateLoginIsUnsuccessful(errorMessage) {
 		try {
-			return this.errorMessageElem.getText().includes("locked out");
+			return this.errorMessageElem.getText().includes(`${errorMessage}`);
 		} catch (error) {
 			console.log("From validateLoginIsUnsuccessful() ", error);
 			return false;

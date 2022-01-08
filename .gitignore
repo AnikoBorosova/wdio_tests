@@ -1,1 +1,5 @@
 node_modules
+errorScreenshots
+allure-results
+package-lock.json
+configs
