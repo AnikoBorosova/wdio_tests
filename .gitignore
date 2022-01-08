@@ -3,3 +3,4 @@ errorScreenshots
 allure-results
 package-lock.json
 configs
+driver-logs
