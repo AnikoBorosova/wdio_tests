@@ -10,7 +10,7 @@ module.exports = {
 	// on a remote machine).
 	runner: 'local',
 	hostname: "localhost",
-	port: 4444,
+	port: 9515,
 	path: '/wd/hub',
 	protocol: 'http',
 	//
