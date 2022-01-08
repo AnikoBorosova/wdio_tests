@@ -1,3 +1,5 @@
+const saveScreenshotHelper = require("./utils/saveScreenshotHelper");
+
 module.exports = {
 	//
 	// ====================
